@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;  
+    list-style: none;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 2.55rem 0 2.55rem;
+    /*background-color: #2E51A2;*/
+}
+
+.brand img{
+    height: 3.2em;
+    max-height: 4em;
+    border-radius: 9px;
+}
+
+header .right-side{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.right-side .search-bar-wrapper{
+    font-size: 2em;
+}
+
+.right-side .search-bar{
+    border-radius: 5px;
+    font-size: 0.7em;
+    width: 15em;
+}
+
+.search-bar-wrapper .fa-search:hover{
+    cursor: pointer;
+}
+
+.right-side .btn-categories{
+    font-size: 1.6em;
+    padding: 0 0.5em 0 0.5em;
+    margin-left: 0.5em;
+    border: 1px solid black;
+}
+
+.right-side .btn-categories:hover{
+    cursor: pointer;
+}
+
+.hr-gap{
+    margin-top: 1.3vh;
+    margin-bottom: 2vh;
+}
+
+.main-wrapper-list{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 1em;
+    row-gap: 2em;
+    margin-right: 2.2vw;
+}
+
+.right-side .hide-left-bar{
+    position: fixed;
+    height: 100vh;
+    width: 17em;
+    background-color: rgba(0, 0, 0, 0.7);
+    top: 0px;
+    left: 0px;
+    z-index: 999;
+    overflow-y: scroll;
+    
+}
+
+.hide-left-bar .scroller li{
+    height: 2em;
+    font-size: 1.5em;
+    color: white;
+    border: 1px solid white;
+    text-align: center;
+    line-height: 2em;
+    border-radius: 5px;
+    margin-top: 3px;
+    cursor: pointer;
+}
+
+.main-wrapper-list .image-manga{
+    color: blue;
+    height: 40vh;
+    background: salmon;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 10px;
+}
+
+
