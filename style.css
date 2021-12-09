@@ -8,7 +8,7 @@ header{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 0 2.55rem 0 2.55rem;
+    padding: 0.8em 2.55em 0 2.55em;
     /*background-color: #2E51A2;*/
 }
 
@@ -25,7 +25,7 @@ header .right-side{
 }
 
 .right-side .search-bar-wrapper{
-    font-size: 2em;
+    font-size: 2.4em;
 }
 
 .right-side .search-bar{
@@ -39,13 +39,17 @@ header .right-side{
 }
 
 .right-side .btn-categories{
+    background-color: white;
     font-size: 1.6em;
-    padding: 0 0.5em 0 0.5em;
-    margin-left: 0.5em;
+    padding: 0.1em 0.5em 0.1em 0.5em;
+    margin-left: 2em;
     border: 1px solid black;
+    border-radius: 9px;
 }
 
 .right-side .btn-categories:hover{
+    color: white;
+    background-color: black;
     cursor: pointer;
 }
 
@@ -60,21 +64,28 @@ header .right-side{
     column-gap: 1em;
     row-gap: 2em;
     margin-right: 2.2vw;
+    margin-left: 2.2vw;
 }
 
-.right-side .hide-left-bar{
+.hide-left-bar{
     position: fixed;
     height: 100vh;
     width: 17em;
     background-color: rgba(0, 0, 0, 0.7);
     top: 0px;
-    left: 0px;
+    left: 0;
+    transform: translateX(-110%);
     z-index: 999;
     overflow-y: scroll;
-    
+
+    transition: all 0.6s;
 }
 
-.hide-left-bar .scroller li{
+.show-left-bar{
+    transform: translateX(0);
+}
+
+.scroller li{
     height: 2em;
     font-size: 1.5em;
     color: white;
@@ -83,17 +94,42 @@ header .right-side{
     line-height: 2em;
     border-radius: 5px;
     margin-top: 3px;
+    
+}
+
+.scroller li:hover{
     cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
 }
 
 .main-wrapper-list .image-manga{
+    position: relative;
     color: blue;
     height: 40vh;
-    background: salmon;
+    background-color: rgba(0, 0, 0, 0.3);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 10px;
+    
 }
+
+.main-wrapper-list .image-manga:hover .name-individual-manga{
+    color: black;
+    text-shadow: -1.5px 0 white, 0 1.5px white, 1.5px 0 white, 0 -1.5px white;
+    z-index: 9;
+    
+}
+
+.name-individual-manga{
+    position: absolute;
+    bottom: 0;
+    left: 2%;
+    cursor: pointer;
+    color: transparent;
+}
+
+
 
 
