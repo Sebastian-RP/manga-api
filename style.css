@@ -112,14 +112,12 @@ header .right-side{
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 10px;
-    
 }
 
 .main-wrapper-list .image-manga:hover .name-individual-manga{
     color: black;
     text-shadow: -1.5px 0 white, 0 1.5px white, 1.5px 0 white, 0 -1.5px white;
     z-index: 9;
-    
 }
 
 .name-individual-manga{
