@@ -9,7 +9,6 @@ header{
     flex-direction: row;
     justify-content: space-between;
     padding: 0.8em 2.55em 0 2.55em;
-    /*background-color: #2E51A2;*/
 }
 
 .brand img{
@@ -94,7 +93,6 @@ header .right-side{
     line-height: 2em;
     border-radius: 5px;
     margin-top: 3px;
-    
 }
 
 .scroller li:hover{
@@ -127,7 +125,5 @@ header .right-side{
     cursor: pointer;
     color: transparent;
 }
-
-
 
 
