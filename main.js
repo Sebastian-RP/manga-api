@@ -1,5 +1,7 @@
 //Diggy Diggy Hole - Wind rose
 
+//moificar para que al cargarse muestre mangas por defecto y tambien filtre los +18
+
 const UrlOfApi = 'https://api.jikan.moe/v3'
 let urlFinal = ''
 let urlFinal2 = ''
@@ -42,7 +44,7 @@ let idClass = 0;
 fetch(urlFinal)
 .then(Response => Response.json())
 .then(data => {
-    const listMangas = data.results
+    let listMangas = data.results
     console.log(listMangas);
 
 
