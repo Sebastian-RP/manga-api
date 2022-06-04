@@ -1,11 +1,14 @@
 //Diggy Diggy Hole - Wind rose
 
-//moificar para que al cargarse muestre mangas por defecto y tambien filtre los +18
+//si el arreglod e lista de mangas esta vacio remplazarlo con el resultado de otra promesa fetch realizada en otra parte
+//una funcion con un fetch dentro que tenga un return que devuelva la data con los mangas elegios en la url y esos se le carguen
+
+//unir hijos de tales generos espeficifados
 
 const UrlOfApi = 'https://api.jikan.moe/v3'
 let urlFinal = ''
 let urlFinal2 = ''
-let urlGenre = '/search/anime?q=&page=1&rated=r+&genre=';
+let urlGenre = '/search/anime?q=&page=1&rated=r17&genre=';
 
 const fragmenteWithMangas = document.createDocumentFragment()
 const mainWrapperListId = document.getElementById('main-wrapper-list-id')
@@ -17,8 +20,16 @@ const scrollerId = document.getElementById('scroller-id')
 
 const BagTemporal = nameMangaSearchID.value
 const remplaceEmptyEspaceBetterRead = BagTemporal.replace(/ /g,"%20");
+let mangaSearched;
 
-let mangaSearched = "/search/manga?q="+remplaceEmptyEspaceBetterRead+"&page=1"//url to get the object with de manga with similar name
+if (remplaceEmptyEspaceBetterRead) {
+    mangaSearched = "/search/manga?q="+remplaceEmptyEspaceBetterRead+"&page=1"//url to get the object with de manga with similar name
+}else{
+    const arrayGenres = [15, 1, 15, 3, 15, 13, 15, 17, 15, 18, 15, 19, 15, 24, 31, 15]; //when load the page show one of this categories id, mi favorite is 15
+    const aSize = arrayGenres.length; 
+    mangaSearched = `/search/manga?q=&page=2&genre=${arrayGenres[Math.floor(Math.random()*(aSize))]}&limit=48` //when I open the page, load cards
+}
+
 urlFinal = UrlOfApi+mangaSearched
 
 nameMangaSearchID.addEventListener("keydown", (e)=>{//when you you click de enterkey will search the name of manga in the searchBar
@@ -47,8 +58,8 @@ fetch(urlFinal)
     let listMangas = data.results
     console.log(listMangas);
 
-
     
+
     listMangas.forEach(individualManga => {
         idClass = idClass+1; //give a diferent id each manga card 
         const newElementManga = document.createElement('li')
