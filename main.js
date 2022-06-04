@@ -3,7 +3,7 @@
 const UrlOfApi = 'https://api.jikan.moe/v3'
 let urlFinal = ''
 let urlFinal2 = ''
-let urlGenre = '/search/anime?q=&page=1&genre=';
+let urlGenre = '/search/anime?q=&page=1&rated=r+&genre=';
 
 const fragmenteWithMangas = document.createDocumentFragment()
 const mainWrapperListId = document.getElementById('main-wrapper-list-id')
@@ -44,6 +44,8 @@ fetch(urlFinal)
 .then(data => {
     const listMangas = data.results
     console.log(listMangas);
+
+
     
     listMangas.forEach(individualManga => {
         idClass = idClass+1; //give a diferent id each manga card 
