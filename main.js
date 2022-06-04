@@ -25,9 +25,9 @@ let mangaSearched;
 if (remplaceEmptyEspaceBetterRead) {
     mangaSearched = "/search/manga?q="+remplaceEmptyEspaceBetterRead+"&page=1"//url to get the object with de manga with similar name
 }else{
-    const arrayGenres = [15, 1, 15, 3, 15, 13, 15, 17, 15, 18, 15, 19, 15, 24, 31, 15]; //when load the page show one of this categories id, mi favorite is 15
-    const aSize = arrayGenres.length; 
-    mangaSearched = `/search/manga?q=&page=2&genre=${arrayGenres[Math.floor(Math.random()*(aSize))]}&limit=48` //when I open the page, load cards
+    const arrayGenres = [15, 1, 15, 3, 15, 13, 15, 17, 15, 18, 15, 19, 15, 24, 31, 15]; //when load the page show one of this categories id, mi favorite is 15 
+    let valueRandom = arrayGenres[Math.floor(Math.random()*(arrayGenres.length))];
+    mangaSearched = `/search/manga?q=&page=2&genre=${valueRandom}&limit=48` //when I open the page, load cards
 }
 
 urlFinal = UrlOfApi+mangaSearched
