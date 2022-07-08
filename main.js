@@ -21,19 +21,46 @@ const scrollerId = document.getElementById('scroller-id')
 const BagTemporal = nameMangaSearchID.value
 const remplaceEmptyEspaceBetterRead = BagTemporal.replace(/ /g,"%20");
 let mangaSearched;
+let SearchedNameCategoriesArray = [];
 
 if (remplaceEmptyEspaceBetterRead) {
-    mangaSearched = "/search/manga?q="+remplaceEmptyEspaceBetterRead+"&page=1&genre=12"; //url to get the object with de manga with similar name
+    mangaSearched = "/search/manga?q="+remplaceEmptyEspaceBetterRead+"&page=1";//url to get the object with de manga with similar name
     //un archivo aparte con una funcione que tome parametro y retorne el arreglo modificado, primeras shonen y asi
-    let action = "/search/manga?q="+remplaceEmptyEspaceBetterRead+"&page=1&genre=1";
-    let adventure = "/search/manga?q="+remplaceEmptyEspaceBetterRead+"&page=1&genre=2";
-    let cars = "/search/manga?q="+remplaceEmptyEspaceBetterRead+"&page=1&genre=3";
-    let comedy = "/search/manga?q="+remplaceEmptyEspaceBetterRead+"&page=1&genre=4";
-    let avanteGarde = "/search/manga?q="+remplaceEmptyEspaceBetterRead+"&page=1&genre=5";
-    let demons = "/search/manga?q="+remplaceEmptyEspaceBetterRead+"&page=1&genre=6";
-    let mystery = "/search/manga?q="+remplaceEmptyEspaceBetterRead+"&page=1&genre=7";
-    let Drama = "/search/manga?q="+remplaceEmptyEspaceBetterRead+"&page=1&genre=8";
-    SearchedNameCategoriesArray = [action, adventure, cars, comedy, avanteGarde, demons, mystery, Drama];
+    let action = UrlOfApi+"/search/manga?q="+remplaceEmptyEspaceBetterRead+"&page=1&genre=1";
+    let adventure = UrlOfApi+"/search/manga?q="+remplaceEmptyEspaceBetterRead+"&page=1&genre=2";
+    let cars = UrlOfApi+"/search/manga?q="+remplaceEmptyEspaceBetterRead+"&page=1&genre=3";
+    // let comedy = UrlOfApi+"/search/manga?q="+remplaceEmptyEspaceBetterRead+"&page=1&genre=4";
+    let avanteGarde = UrlOfApi+"/search/manga?q="+remplaceEmptyEspaceBetterRead+"&page=1&genre=5";
+    // let demons = UrlOfApi+"/search/manga?q="+remplaceEmptyEspaceBetterRead+"&page=1&genre=6";
+    let mystery = UrlOfApi+"/search/manga?q="+remplaceEmptyEspaceBetterRead+"&page=1&genre=7";
+    // let drama = UrlOfApi+"/search/manga?q="+remplaceEmptyEspaceBetterRead+"&page=1&genre=8";
+    // let fantasy = UrlOfApi+"/search/manga?q="+remplaceEmptyEspaceBetterRead+"&page=1&genre=10";
+    let game = UrlOfApi+"/search/manga?q="+remplaceEmptyEspaceBetterRead+"&page=1&genre=11";
+    let historical = UrlOfApi+"/search/manga?q="+remplaceEmptyEspaceBetterRead+"&page=1&genre=13";
+    let horror = UrlOfApi+"/search/manga?q="+remplaceEmptyEspaceBetterRead+"&page=1&genre=14";
+    let kids = UrlOfApi+"/search/manga?q="+remplaceEmptyEspaceBetterRead+"&page=1&genre=15";
+    let martialArts = UrlOfApi+"/search/manga?q="+remplaceEmptyEspaceBetterRead+"&page=1&genre=17";
+    let mecha = UrlOfApi+"/search/manga?q="+remplaceEmptyEspaceBetterRead+"&page=1&genre=18";
+    let samurai = UrlOfApi+"/search/manga?q="+remplaceEmptyEspaceBetterRead+"&page=1&genre=19";
+    // let romance = UrlOfApi+"/search/manga?q="+remplaceEmptyEspaceBetterRead+"&page=1&genre=22";
+    // let school = UrlOfApi+"/search/manga?q="+remplaceEmptyEspaceBetterRead+"&page=1&genre=23";
+    let sciFi = UrlOfApi+"/search/manga?q="+remplaceEmptyEspaceBetterRead+"&page=1&genre=24";
+    let shoujo = UrlOfApi+"/search/manga?q="+remplaceEmptyEspaceBetterRead+"&page=1&genre=25";
+    let shounen = UrlOfApi+"/search/manga?q="+remplaceEmptyEspaceBetterRead+"&page=1&genre=27";
+    let space = UrlOfApi+"/search/manga?q="+remplaceEmptyEspaceBetterRead+"&page=1&genre=29";
+    let sports = UrlOfApi+"/search/manga?q="+remplaceEmptyEspaceBetterRead+"&page=1&genre=30";
+    let superPower = UrlOfApi+"/search/manga?q="+remplaceEmptyEspaceBetterRead+"&page=1&genre=31";
+    let vampire = UrlOfApi+"/search/manga?q="+remplaceEmptyEspaceBetterRead+"&page=1&genre=32";
+    let sliceOfLife = UrlOfApi+"/search/manga?q="+remplaceEmptyEspaceBetterRead+"&page=1&genre=36";
+    // let supernatural = UrlOfApi+"/search/manga?q="+remplaceEmptyEspaceBetterRead+"&page=1&genre=37";
+    let military = UrlOfApi+"/search/manga?q="+remplaceEmptyEspaceBetterRead+"&page=1&genre=38";
+    let police = UrlOfApi+"/search/manga?q="+remplaceEmptyEspaceBetterRead+"&page=1&genre=39";
+    let psychological = UrlOfApi+"/search/manga?q="+remplaceEmptyEspaceBetterRead+"&page=1&genre=40";
+    let seinen = UrlOfApi+"/search/manga?q="+remplaceEmptyEspaceBetterRead+"&page=1&genre=41";
+    let josei = UrlOfApi+"/search/manga?q="+remplaceEmptyEspaceBetterRead+"&page=1&genre=42";
+    let doujinshi = UrlOfApi+"/search/manga?q="+remplaceEmptyEspaceBetterRead+"&page=1&genre=43";
+
+    SearchedNameCategoriesArray = [action, adventure, cars, avanteGarde, mystery, game, historical, horror, kids, martialArts, mecha, samurai, sciFi, shoujo, shounen, space, sports, superPower, vampire, sliceOfLife, military, police, psychological, seinen, josei, doujinshi];
 }else{
     const arrayGenres = [15, 1, 15, 3, 15, 13, 15, 17, 15, 18, 15, 19, 15, 24, 31, 15]; //when load the page show one of this categories id, mi favorite is 15 
     let valueRandom = arrayGenres[Math.floor(Math.random()*(arrayGenres.length))];
@@ -62,16 +89,33 @@ scrollerId.addEventListener("click", (e)=>{//select genre
 function pageLoaded(urlFinal){
     //urlFinal = "https://api.jikan.moe/v3/search/anime?q=&page=1&genre=41"
 let idClass = 0;
+let categoriesSearchedArray = [];
 
 //condicional si hay elementos provenientes de la barra de busqueda, ejecute este fetch, y otro if si se enviaron datos desde ahí
+if (remplaceEmptyEspaceBetterRead) {
+    SearchedNameCategoriesArray.map(category => fetch(category)
+    .then(Response => Response.json())
+    .then(data => {
+        if (data.results) {
+            categoriesSearchedArray.push(...data.results);
+            console.log(category);
+            console.log(data.results);
+        }
+    })
+    )
+}
+
 
 fetch(urlFinal)
 .then(Response => Response.json())
 .then(data => {
-    let listMangas = data.results
+    let listMangas;
+    if (categoriesSearchedArray[0]) {
+        listMangas = categoriesSearchedArray 
+    }else{
+        listMangas = data.results
+    }
     console.log(listMangas);
-
-    
 
     listMangas.forEach(individualManga => {
         idClass = idClass+1; //give a diferent id each manga card 
