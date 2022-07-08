@@ -104,7 +104,7 @@ fetch(urlFinal)
     let listMangas;
     if (categoriesSearchedArray[0]) {
         //delete that mangas
-        listMangas = categoriesSearchedArray.filter((manga) => manga.title != "Devil Loli" || manga.title != "Oku made Ippai Aishite" || manga.title != "Yankee Girl no Namaiki Oppai ni Kachikomi!! Anthology Comic");
+        listMangas = categoriesSearchedArray.filter((manga) => manga.title != "Devil Loli" && manga.title != "Oku made Ippai Aishite" && manga.title != "Yankee Girl no Namaiki Oppai ni Kachikomi!! Anthology Comic");
     }else{
         listMangas = data.results
     }
