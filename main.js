@@ -1,10 +1,5 @@
 //Diggy Diggy Hole - Wind rose
 
-//si el arreglod e lista de mangas esta vacio remplazarlo con el resultado de otra promesa fetch realizada en otra parte
-//una funcion con un fetch dentro que tenga un return que devuelva la data con los mangas elegios en la url y esos se le carguen
-
-//unir hijos de tales generos espeficifados
-
 const UrlOfApi = 'https://api.jikan.moe/v3'
 let urlFinal = ''
 let urlFinal2 = ''
@@ -98,20 +93,18 @@ if (remplaceEmptyEspaceBetterRead) {
     .then(data => {
         if (data.results) {
             categoriesSearchedArray.push(...data.results);
-            console.log(category);
-            console.log(data.results);
         }
     })
     )
 }
-
 
 fetch(urlFinal)
 .then(Response => Response.json())
 .then(data => {
     let listMangas;
     if (categoriesSearchedArray[0]) {
-        listMangas = categoriesSearchedArray 
+        //delete that mangas
+        listMangas = categoriesSearchedArray.filter((manga) => manga.title != "Devil Loli" && manga.title != "Oku made Ippai Aishite" && manga.title != "Yankee Girl no Namaiki Oppai ni Kachikomi!! Anthology Comic");
     }else{
         listMangas = data.results
     }
