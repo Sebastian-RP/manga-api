@@ -23,7 +23,17 @@ const remplaceEmptyEspaceBetterRead = BagTemporal.replace(/ /g,"%20");
 let mangaSearched;
 
 if (remplaceEmptyEspaceBetterRead) {
-    mangaSearched = "/search/manga?q="+remplaceEmptyEspaceBetterRead+"&page=1"//url to get the object with de manga with similar name
+    mangaSearched = "/search/manga?q="+remplaceEmptyEspaceBetterRead+"&page=1&genre=12"; //url to get the object with de manga with similar name
+    //un archivo aparte con una funcione que tome parametro y retorne el arreglo modificado, primeras shonen y asi
+    let action = "/search/manga?q="+remplaceEmptyEspaceBetterRead+"&page=1&genre=1";
+    let adventure = "/search/manga?q="+remplaceEmptyEspaceBetterRead+"&page=1&genre=2";
+    let cars = "/search/manga?q="+remplaceEmptyEspaceBetterRead+"&page=1&genre=3";
+    let comedy = "/search/manga?q="+remplaceEmptyEspaceBetterRead+"&page=1&genre=4";
+    let avanteGarde = "/search/manga?q="+remplaceEmptyEspaceBetterRead+"&page=1&genre=5";
+    let demons = "/search/manga?q="+remplaceEmptyEspaceBetterRead+"&page=1&genre=6";
+    let mystery = "/search/manga?q="+remplaceEmptyEspaceBetterRead+"&page=1&genre=7";
+    let Drama = "/search/manga?q="+remplaceEmptyEspaceBetterRead+"&page=1&genre=8";
+    SearchedNameCategoriesArray = [action, adventure, cars, comedy, avanteGarde, demons, mystery, Drama];
 }else{
     const arrayGenres = [15, 1, 15, 3, 15, 13, 15, 17, 15, 18, 15, 19, 15, 24, 31, 15]; //when load the page show one of this categories id, mi favorite is 15 
     let valueRandom = arrayGenres[Math.floor(Math.random()*(arrayGenres.length))];
@@ -52,6 +62,9 @@ scrollerId.addEventListener("click", (e)=>{//select genre
 function pageLoaded(urlFinal){
     //urlFinal = "https://api.jikan.moe/v3/search/anime?q=&page=1&genre=41"
 let idClass = 0;
+
+//condicional si hay elementos provenientes de la barra de busqueda, ejecute este fetch, y otro if si se enviaron datos desde ahí
+
 fetch(urlFinal)
 .then(Response => Response.json())
 .then(data => {
